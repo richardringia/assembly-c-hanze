@@ -3,8 +3,8 @@
 
 
 int main(void) {
-	DDRB = 0x00; // Set de waarde van DDRB naar 0
-	DDRD = 0xff; // Set de waarde van DDRD naar 255
+	DDRB = 0x00; // Set de waarde van DDRB naar read
+	DDRD = 0xff; // Set de waarde van DDRD naar write
 	
 	while (1) { // Een oneindige loop maken
 		int temp = PINB & 0b00000011; // Temp wordt de uitkomst van de AND met PINB en 0b00000011
