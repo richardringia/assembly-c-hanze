@@ -1,0 +1,1091 @@
+
+Week 4 opdracht 2 poging 2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000a  00800100  000004e4  00000578  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004e4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000028  0080010a  0080010a  00000582  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000582  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000005b4  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000c8  00000000  00000000  000005f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000f38  00000000  00000000  000006bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000009a9  00000000  00000000  000015f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000be5  00000000  00000000  00001f9d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000230  00000000  00000000  00002b84  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00006e4b  00000000  00000000  00002db4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000006be  00000000  00000000  00009bff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000098  00000000  00000000  0000a2bd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  000028cf  00000000  00000000  0000a355  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	4c c0       	rjmp	.+152    	; 0x9e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	4a c0       	rjmp	.+148    	; 0x9e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	48 c0       	rjmp	.+144    	; 0x9e <__bad_interrupt>
+   e:	00 00       	nop
+  10:	46 c0       	rjmp	.+140    	; 0x9e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	44 c0       	rjmp	.+136    	; 0x9e <__bad_interrupt>
+  16:	00 00       	nop
+  18:	42 c0       	rjmp	.+132    	; 0x9e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	40 c0       	rjmp	.+128    	; 0x9e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3e c0       	rjmp	.+124    	; 0x9e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	3c c0       	rjmp	.+120    	; 0x9e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	3a c0       	rjmp	.+116    	; 0x9e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	b8 c0       	rjmp	.+368    	; 0x19e <__vector_11>
+  2e:	00 00       	nop
+  30:	36 c0       	rjmp	.+108    	; 0x9e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	34 c0       	rjmp	.+104    	; 0x9e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	32 c0       	rjmp	.+100    	; 0x9e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	30 c0       	rjmp	.+96     	; 0x9e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2e c0       	rjmp	.+92     	; 0x9e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	2c c0       	rjmp	.+88     	; 0x9e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	2a c0       	rjmp	.+84     	; 0x9e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	28 c0       	rjmp	.+80     	; 0x9e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	26 c0       	rjmp	.+76     	; 0x9e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	24 c0       	rjmp	.+72     	; 0x9e <__bad_interrupt>
+  56:	00 00       	nop
+  58:	22 c0       	rjmp	.+68     	; 0x9e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	20 c0       	rjmp	.+64     	; 0x9e <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	1e c0       	rjmp	.+60     	; 0x9e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	1c c0       	rjmp	.+56     	; 0x9e <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e4 ee       	ldi	r30, 0xE4	; 228
+  7c:	f4 e0       	ldi	r31, 0x04	; 4
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	aa 30       	cpi	r26, 0x0A	; 10
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	aa e0       	ldi	r26, 0x0A	; 10
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a2 33       	cpi	r26, 0x32	; 50
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	f0 d1       	rcall	.+992    	; 0x47c <main>
+  9c:	21 c2       	rjmp	.+1090   	; 0x4e0 <_exit>
+
+0000009e <__bad_interrupt>:
+  9e:	b0 cf       	rjmp	.-160    	; 0x0 <__vectors>
+
+000000a0 <SCH_Add_Task>:
+  Task will be first executed at T = 300 ticks, then 1300, 2300, etc.            
+ 
+-*------------------------------------------------------------------*/
+
+unsigned char SCH_Add_Task(void (*pFunction)(), const unsigned int DELAY, const unsigned int PERIOD)
+{
+  a0:	0f 93       	push	r16
+  a2:	1f 93       	push	r17
+  a4:	cf 93       	push	r28
+  a6:	df 93       	push	r29
+  a8:	8c 01       	movw	r16, r24
+   unsigned char Index = 0;
+
+   // First find a gap in the array (if there is one)
+   while((SCH_tasks_G[Index].pTask != 0) && (Index < SCH_MAX_TASKS))
+  aa:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <SCH_tasks_G>
+  ae:	90 91 0f 01 	lds	r25, 0x010F	; 0x80010f <SCH_tasks_G+0x1>
+  b2:	89 2b       	or	r24, r25
+  b4:	81 f0       	breq	.+32     	; 0xd6 <SCH_Add_Task+0x36>
+  b6:	ee e0       	ldi	r30, 0x0E	; 14
+  b8:	f1 e0       	ldi	r31, 0x01	; 1
+  ba:	21 e0       	ldi	r18, 0x01	; 1
+  bc:	30 e0       	ldi	r19, 0x00	; 0
+   {
+      Index++;
+  be:	82 2f       	mov	r24, r18
+unsigned char SCH_Add_Task(void (*pFunction)(), const unsigned int DELAY, const unsigned int PERIOD)
+{
+   unsigned char Index = 0;
+
+   // First find a gap in the array (if there is one)
+   while((SCH_tasks_G[Index].pTask != 0) && (Index < SCH_MAX_TASKS))
+  c0:	e9 01       	movw	r28, r18
+  c2:	a7 81       	ldd	r26, Z+7	; 0x07
+  c4:	b0 85       	ldd	r27, Z+8	; 0x08
+  c6:	2f 5f       	subi	r18, 0xFF	; 255
+  c8:	3f 4f       	sbci	r19, 0xFF	; 255
+  ca:	37 96       	adiw	r30, 0x07	; 7
+  cc:	ab 2b       	or	r26, r27
+  ce:	b9 f7       	brne	.-18     	; 0xbe <SCH_Add_Task+0x1e>
+   {
+      Index++;
+   }
+
+   // Have we reached the end of the list?   
+   if(Index == SCH_MAX_TASKS)
+  d0:	85 30       	cpi	r24, 0x05	; 5
+  d2:	21 f4       	brne	.+8      	; 0xdc <SCH_Add_Task+0x3c>
+  d4:	15 c0       	rjmp	.+42     	; 0x100 <SCH_Add_Task+0x60>
+unsigned char SCH_Add_Task(void (*pFunction)(), const unsigned int DELAY, const unsigned int PERIOD)
+{
+   unsigned char Index = 0;
+
+   // First find a gap in the array (if there is one)
+   while((SCH_tasks_G[Index].pTask != 0) && (Index < SCH_MAX_TASKS))
+  d6:	c0 e0       	ldi	r28, 0x00	; 0
+  d8:	d0 e0       	ldi	r29, 0x00	; 0
+ 
+-*------------------------------------------------------------------*/
+
+unsigned char SCH_Add_Task(void (*pFunction)(), const unsigned int DELAY, const unsigned int PERIOD)
+{
+   unsigned char Index = 0;
+  da:	80 e0       	ldi	r24, 0x00	; 0
+      // Task list is full, return an error code
+      return SCH_MAX_TASKS;  
+   }
+
+   // If we're here, there is a space in the task array
+   SCH_tasks_G[Index].pTask = pFunction;
+  dc:	fe 01       	movw	r30, r28
+  de:	ee 0f       	add	r30, r30
+  e0:	ff 1f       	adc	r31, r31
+  e2:	ee 0f       	add	r30, r30
+  e4:	ff 1f       	adc	r31, r31
+  e6:	ee 0f       	add	r30, r30
+  e8:	ff 1f       	adc	r31, r31
+  ea:	ec 1b       	sub	r30, r28
+  ec:	fd 0b       	sbc	r31, r29
+  ee:	e2 5f       	subi	r30, 0xF2	; 242
+  f0:	fe 4f       	sbci	r31, 0xFE	; 254
+  f2:	11 83       	std	Z+1, r17	; 0x01
+  f4:	00 83       	st	Z, r16
+   SCH_tasks_G[Index].Delay =DELAY;
+  f6:	73 83       	std	Z+3, r23	; 0x03
+  f8:	62 83       	std	Z+2, r22	; 0x02
+   SCH_tasks_G[Index].Period = PERIOD;
+  fa:	55 83       	std	Z+5, r21	; 0x05
+  fc:	44 83       	std	Z+4, r20	; 0x04
+   SCH_tasks_G[Index].RunMe = 0;
+  fe:	16 82       	std	Z+6, r1	; 0x06
+
+   // return position of task (to allow later deletion)
+   return Index;
+}
+ 100:	df 91       	pop	r29
+ 102:	cf 91       	pop	r28
+ 104:	1f 91       	pop	r17
+ 106:	0f 91       	pop	r16
+ 108:	08 95       	ret
+
+0000010a <SCH_Delete_Task>:
+unsigned char SCH_Delete_Task(const unsigned char TASK_INDEX)
+{
+   // Return_code can be used for error reporting, NOT USED HERE THOUGH!
+   unsigned char Return_code = 0;
+
+   SCH_tasks_G[TASK_INDEX].pTask = 0;
+ 10a:	27 e0       	ldi	r18, 0x07	; 7
+ 10c:	82 9f       	mul	r24, r18
+ 10e:	c0 01       	movw	r24, r0
+ 110:	11 24       	eor	r1, r1
+ 112:	fc 01       	movw	r30, r24
+ 114:	e2 5f       	subi	r30, 0xF2	; 242
+ 116:	fe 4f       	sbci	r31, 0xFE	; 254
+ 118:	11 82       	std	Z+1, r1	; 0x01
+ 11a:	10 82       	st	Z, r1
+   SCH_tasks_G[TASK_INDEX].Delay = 0;
+ 11c:	13 82       	std	Z+3, r1	; 0x03
+ 11e:	12 82       	std	Z+2, r1	; 0x02
+   SCH_tasks_G[TASK_INDEX].Period = 0;
+ 120:	15 82       	std	Z+5, r1	; 0x05
+ 122:	14 82       	std	Z+4, r1	; 0x04
+   SCH_tasks_G[TASK_INDEX].RunMe = 0;
+ 124:	16 82       	std	Z+6, r1	; 0x06
+
+   return Return_code;
+}
+ 126:	80 e0       	ldi	r24, 0x00	; 0
+ 128:	08 95       	ret
+
+0000012a <SCH_Dispatch_Tasks>:
+  This function must be called (repeatedly) from the main loop.
+
+-*------------------------------------------------------------------*/
+
+void SCH_Dispatch_Tasks(void)
+{
+ 12a:	ef 92       	push	r14
+ 12c:	ff 92       	push	r15
+ 12e:	1f 93       	push	r17
+ 130:	cf 93       	push	r28
+ 132:	df 93       	push	r29
+ 134:	ce e0       	ldi	r28, 0x0E	; 14
+ 136:	d1 e0       	ldi	r29, 0x01	; 1
+   unsigned char Index;
+
+   // Dispatches (runs) the next task (if one is ready)
+   for(Index = 0; Index < SCH_MAX_TASKS; Index++)
+ 138:	10 e0       	ldi	r17, 0x00	; 0
+   {
+      if((SCH_tasks_G[Index].RunMe > 0) && (SCH_tasks_G[Index].pTask != 0))
+ 13a:	8e 81       	ldd	r24, Y+6	; 0x06
+ 13c:	88 23       	and	r24, r24
+ 13e:	71 f0       	breq	.+28     	; 0x15c <SCH_Dispatch_Tasks+0x32>
+ 140:	e8 81       	ld	r30, Y
+ 142:	f9 81       	ldd	r31, Y+1	; 0x01
+ 144:	30 97       	sbiw	r30, 0x00	; 0
+ 146:	51 f0       	breq	.+20     	; 0x15c <SCH_Dispatch_Tasks+0x32>
+      {
+         (*SCH_tasks_G[Index].pTask)();  // Run the task
+ 148:	09 95       	icall
+         SCH_tasks_G[Index].RunMe -= 1;   // Reset / reduce RunMe flag
+ 14a:	8e 81       	ldd	r24, Y+6	; 0x06
+ 14c:	81 50       	subi	r24, 0x01	; 1
+ 14e:	8e 83       	std	Y+6, r24	; 0x06
+
+         // Periodic tasks will automatically run again
+         // - if this is a 'one shot' task, remove it from the array
+         if(SCH_tasks_G[Index].Period == 0)
+ 150:	8c 81       	ldd	r24, Y+4	; 0x04
+ 152:	9d 81       	ldd	r25, Y+5	; 0x05
+ 154:	89 2b       	or	r24, r25
+ 156:	11 f4       	brne	.+4      	; 0x15c <SCH_Dispatch_Tasks+0x32>
+         {
+            SCH_Delete_Task(Index);
+ 158:	81 2f       	mov	r24, r17
+ 15a:	d7 df       	rcall	.-82     	; 0x10a <SCH_Delete_Task>
+void SCH_Dispatch_Tasks(void)
+{
+   unsigned char Index;
+
+   // Dispatches (runs) the next task (if one is ready)
+   for(Index = 0; Index < SCH_MAX_TASKS; Index++)
+ 15c:	1f 5f       	subi	r17, 0xFF	; 255
+ 15e:	27 96       	adiw	r28, 0x07	; 7
+ 160:	15 30       	cpi	r17, 0x05	; 5
+ 162:	59 f7       	brne	.-42     	; 0x13a <SCH_Dispatch_Tasks+0x10>
+         {
+            SCH_Delete_Task(Index);
+         }
+      }
+   }
+}
+ 164:	df 91       	pop	r29
+ 166:	cf 91       	pop	r28
+ 168:	1f 91       	pop	r17
+ 16a:	ff 90       	pop	r15
+ 16c:	ef 90       	pop	r14
+ 16e:	08 95       	ret
+
+00000170 <SCH_Init_T1>:
+  You must call this function before using the scheduler.  
+
+-*------------------------------------------------------------------*/
+
+void SCH_Init_T1(void)
+{
+ 170:	cf 93       	push	r28
+   unsigned char i;
+
+   for(i = 0; i < SCH_MAX_TASKS; i++)
+ 172:	c0 e0       	ldi	r28, 0x00	; 0
+   {
+      SCH_Delete_Task(i);
+ 174:	8c 2f       	mov	r24, r28
+ 176:	c9 df       	rcall	.-110    	; 0x10a <SCH_Delete_Task>
+
+void SCH_Init_T1(void)
+{
+   unsigned char i;
+
+   for(i = 0; i < SCH_MAX_TASKS; i++)
+ 178:	cf 5f       	subi	r28, 0xFF	; 255
+ 17a:	c5 30       	cpi	r28, 0x05	; 5
+ 17c:	d9 f7       	brne	.-10     	; 0x174 <SCH_Init_T1+0x4>
+
+   // Set up Timer 1
+   // Values for 1ms and 10ms ticks are provided for various crystals
+
+   // Hier moet de timer periode worden aangepast ....!
+   OCR1A = (uint16_t)625;   		     // 10ms = (256/16.000.000) * 625
+ 17e:	81 e7       	ldi	r24, 0x71	; 113
+ 180:	92 e0       	ldi	r25, 0x02	; 2
+ 182:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__DATA_REGION_ORIGIN__+0x29>
+ 186:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__DATA_REGION_ORIGIN__+0x28>
+   TCCR1B = (1 << CS12) | (1 << WGM12);  // prescale op 64, top counter = value OCR1A (CTC mode)
+ 18a:	8c e0       	ldi	r24, 0x0C	; 12
+ 18c:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__DATA_REGION_ORIGIN__+0x21>
+   TIMSK1 = 1 << OCIE1A;   		     // Timer 1 Output Compare A Match Interrupt Enable
+ 190:	82 e0       	ldi	r24, 0x02	; 2
+ 192:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <__DATA_REGION_ORIGIN__+0xf>
+}
+ 196:	cf 91       	pop	r28
+ 198:	08 95       	ret
+
+0000019a <SCH_Start>:
+ 
+-*------------------------------------------------------------------*/
+
+void SCH_Start(void)
+{
+      sei();
+ 19a:	78 94       	sei
+ 19c:	08 95       	ret
+
+0000019e <__vector_11>:
+  determined by the timer settings in SCH_Init_T1().
+
+-*------------------------------------------------------------------*/
+
+ISR(TIMER1_COMPA_vect)
+{
+ 19e:	1f 92       	push	r1
+ 1a0:	0f 92       	push	r0
+ 1a2:	0f b6       	in	r0, 0x3f	; 63
+ 1a4:	0f 92       	push	r0
+ 1a6:	11 24       	eor	r1, r1
+ 1a8:	2f 93       	push	r18
+ 1aa:	3f 93       	push	r19
+ 1ac:	8f 93       	push	r24
+ 1ae:	9f 93       	push	r25
+ 1b0:	af 93       	push	r26
+ 1b2:	bf 93       	push	r27
+ 1b4:	ef 93       	push	r30
+ 1b6:	ff 93       	push	r31
+ 1b8:	ee e0       	ldi	r30, 0x0E	; 14
+ 1ba:	f1 e0       	ldi	r31, 0x01	; 1
+ 1bc:	21 e3       	ldi	r18, 0x31	; 49
+ 1be:	31 e0       	ldi	r19, 0x01	; 1
+   unsigned char Index;
+   for(Index = 0; Index < SCH_MAX_TASKS; Index++)
+   {
+      // Check if there is a task at this location
+      if(SCH_tasks_G[Index].pTask)
+ 1c0:	80 81       	ld	r24, Z
+ 1c2:	91 81       	ldd	r25, Z+1	; 0x01
+ 1c4:	89 2b       	or	r24, r25
+ 1c6:	91 f0       	breq	.+36     	; 0x1ec <__vector_11+0x4e>
+      {
+         if(SCH_tasks_G[Index].Delay == 0)
+ 1c8:	82 81       	ldd	r24, Z+2	; 0x02
+ 1ca:	93 81       	ldd	r25, Z+3	; 0x03
+ 1cc:	00 97       	sbiw	r24, 0x00	; 0
+ 1ce:	59 f4       	brne	.+22     	; 0x1e6 <__vector_11+0x48>
+         {
+            // The task is due to run, Inc. the 'RunMe' flag
+            SCH_tasks_G[Index].RunMe += 1;
+ 1d0:	86 81       	ldd	r24, Z+6	; 0x06
+ 1d2:	8f 5f       	subi	r24, 0xFF	; 255
+ 1d4:	86 83       	std	Z+6, r24	; 0x06
+
+            if(SCH_tasks_G[Index].Period)
+ 1d6:	84 81       	ldd	r24, Z+4	; 0x04
+ 1d8:	95 81       	ldd	r25, Z+5	; 0x05
+ 1da:	00 97       	sbiw	r24, 0x00	; 0
+ 1dc:	39 f0       	breq	.+14     	; 0x1ec <__vector_11+0x4e>
+            {
+               // Schedule periodic tasks to run again
+               SCH_tasks_G[Index].Delay = SCH_tasks_G[Index].Period;
+               SCH_tasks_G[Index].Delay -= 1;
+ 1de:	01 97       	sbiw	r24, 0x01	; 1
+ 1e0:	93 83       	std	Z+3, r25	; 0x03
+ 1e2:	82 83       	std	Z+2, r24	; 0x02
+ 1e4:	03 c0       	rjmp	.+6      	; 0x1ec <__vector_11+0x4e>
+            }
+         }
+         else
+         {
+            // Not yet ready to run: just decrement the delay
+            SCH_tasks_G[Index].Delay -= 1;
+ 1e6:	01 97       	sbiw	r24, 0x01	; 1
+ 1e8:	93 83       	std	Z+3, r25	; 0x03
+ 1ea:	82 83       	std	Z+2, r24	; 0x02
+ 1ec:	37 96       	adiw	r30, 0x07	; 7
+-*------------------------------------------------------------------*/
+
+ISR(TIMER1_COMPA_vect)
+{
+   unsigned char Index;
+   for(Index = 0; Index < SCH_MAX_TASKS; Index++)
+ 1ee:	e2 17       	cp	r30, r18
+ 1f0:	f3 07       	cpc	r31, r19
+ 1f2:	31 f7       	brne	.-52     	; 0x1c0 <__vector_11+0x22>
+            // Not yet ready to run: just decrement the delay
+            SCH_tasks_G[Index].Delay -= 1;
+         }
+      }
+   }
+ 1f4:	ff 91       	pop	r31
+ 1f6:	ef 91       	pop	r30
+ 1f8:	bf 91       	pop	r27
+ 1fa:	af 91       	pop	r26
+ 1fc:	9f 91       	pop	r25
+ 1fe:	8f 91       	pop	r24
+ 200:	3f 91       	pop	r19
+ 202:	2f 91       	pop	r18
+ 204:	0f 90       	pop	r0
+ 206:	0f be       	out	0x3f, r0	; 63
+ 208:	0f 90       	pop	r0
+ 20a:	1f 90       	pop	r1
+ 20c:	18 95       	reti
+
+0000020e <read>:
+#include "TM1638.h"
+
+// Read value from pin on PORTB
+int read(uint8_t pin)
+{
+	return (PINB & _BV(pin)) ? HIGH : LOW;
+ 20e:	23 b1       	in	r18, 0x03	; 3
+ 210:	30 e0       	ldi	r19, 0x00	; 0
+ 212:	a9 01       	movw	r20, r18
+ 214:	02 c0       	rjmp	.+4      	; 0x21a <read+0xc>
+ 216:	55 95       	asr	r21
+ 218:	47 95       	ror	r20
+ 21a:	8a 95       	dec	r24
+ 21c:	e2 f7       	brpl	.-8      	; 0x216 <read+0x8>
+ 21e:	ca 01       	movw	r24, r20
+}
+ 220:	81 70       	andi	r24, 0x01	; 1
+ 222:	99 27       	eor	r25, r25
+ 224:	08 95       	ret
+
+00000226 <write>:
+
+// Write value to pin on PORTB
+void write(uint8_t pin, uint8_t val)
+{
+	if (val == LOW) {
+ 226:	61 11       	cpse	r22, r1
+ 228:	0e c0       	rjmp	.+28     	; 0x246 <write+0x20>
+		PORTB &= ~(_BV(pin)); // clear bit
+ 22a:	45 b1       	in	r20, 0x05	; 5
+ 22c:	21 e0       	ldi	r18, 0x01	; 1
+ 22e:	30 e0       	ldi	r19, 0x00	; 0
+ 230:	b9 01       	movw	r22, r18
+ 232:	02 c0       	rjmp	.+4      	; 0x238 <write+0x12>
+ 234:	66 0f       	add	r22, r22
+ 236:	77 1f       	adc	r23, r23
+ 238:	8a 95       	dec	r24
+ 23a:	e2 f7       	brpl	.-8      	; 0x234 <write+0xe>
+ 23c:	cb 01       	movw	r24, r22
+ 23e:	80 95       	com	r24
+ 240:	84 23       	and	r24, r20
+ 242:	85 b9       	out	0x05, r24	; 5
+ 244:	08 95       	ret
+		} else {
+		PORTB |= _BV(pin);    // set bit
+ 246:	45 b1       	in	r20, 0x05	; 5
+ 248:	21 e0       	ldi	r18, 0x01	; 1
+ 24a:	30 e0       	ldi	r19, 0x00	; 0
+ 24c:	b9 01       	movw	r22, r18
+ 24e:	02 c0       	rjmp	.+4      	; 0x254 <write+0x2e>
+ 250:	66 0f       	add	r22, r22
+ 252:	77 1f       	adc	r23, r23
+ 254:	8a 95       	dec	r24
+ 256:	e2 f7       	brpl	.-8      	; 0x250 <write+0x2a>
+ 258:	cb 01       	movw	r24, r22
+ 25a:	84 2b       	or	r24, r20
+ 25c:	85 b9       	out	0x05, r24	; 5
+ 25e:	08 95       	ret
+
+00000260 <shiftOut>:
+	}
+}
+
+// Send value (1 byte) over the data pin
+void shiftOut (uint8_t val)
+{
+ 260:	cf 93       	push	r28
+ 262:	df 93       	push	r29
+ 264:	d8 2f       	mov	r29, r24
+ 266:	c8 e0       	ldi	r28, 0x08	; 8
+	// Send all 8 bits (LSB first)
+	for (uint8_t i = 0; i < 8; i++)  {
+		write(CLOCK, LOW);                 // Bit valid on rising edge
+ 268:	60 e0       	ldi	r22, 0x00	; 0
+ 26a:	81 e0       	ldi	r24, 0x01	; 1
+ 26c:	dc df       	rcall	.-72     	; 0x226 <write>
+		write(DATA, val & 1 ? HIGH : LOW); // LSB first
+ 26e:	6d 2f       	mov	r22, r29
+ 270:	61 70       	andi	r22, 0x01	; 1
+ 272:	80 e0       	ldi	r24, 0x00	; 0
+ 274:	d8 df       	rcall	.-80     	; 0x226 <write>
+		val = val >> 1;
+ 276:	d6 95       	lsr	r29
+		write(CLOCK, HIGH);
+ 278:	61 e0       	ldi	r22, 0x01	; 1
+ 27a:	81 e0       	ldi	r24, 0x01	; 1
+ 27c:	d4 df       	rcall	.-88     	; 0x226 <write>
+ 27e:	c1 50       	subi	r28, 0x01	; 1
+
+// Send value (1 byte) over the data pin
+void shiftOut (uint8_t val)
+{
+	// Send all 8 bits (LSB first)
+	for (uint8_t i = 0; i < 8; i++)  {
+ 280:	99 f7       	brne	.-26     	; 0x268 <shiftOut+0x8>
+		write(CLOCK, LOW);                 // Bit valid on rising edge
+		write(DATA, val & 1 ? HIGH : LOW); // LSB first
+		val = val >> 1;
+		write(CLOCK, HIGH);
+	}
+}
+ 282:	df 91       	pop	r29
+ 284:	cf 91       	pop	r28
+ 286:	08 95       	ret
+
+00000288 <shiftIn>:
+
+// shift in value from data
+uint8_t shiftIn(void)
+{
+ 288:	1f 93       	push	r17
+ 28a:	cf 93       	push	r28
+ 28c:	df 93       	push	r29
+	uint8_t value = 0;
+	uint8_t i;
+
+	DDRB &= ~(_BV(DATA)); // clear bit, direction = input
+ 28e:	20 98       	cbi	0x04, 0	; 4
+ 290:	c0 e0       	ldi	r28, 0x00	; 0
+ 292:	d0 e0       	ldi	r29, 0x00	; 0
+}
+
+// shift in value from data
+uint8_t shiftIn(void)
+{
+	uint8_t value = 0;
+ 294:	10 e0       	ldi	r17, 0x00	; 0
+	uint8_t i;
+
+	DDRB &= ~(_BV(DATA)); // clear bit, direction = input
+	
+	for (i = 0; i < 8; ++i) {
+		write(CLOCK, LOW);   // bit valid on rising edge
+ 296:	60 e0       	ldi	r22, 0x00	; 0
+ 298:	81 e0       	ldi	r24, 0x01	; 1
+ 29a:	c5 df       	rcall	.-118    	; 0x226 <write>
+		value = value | (read(DATA) << i); // lsb first
+ 29c:	80 e0       	ldi	r24, 0x00	; 0
+ 29e:	b7 df       	rcall	.-146    	; 0x20e <read>
+ 2a0:	0c 2e       	mov	r0, r28
+ 2a2:	02 c0       	rjmp	.+4      	; 0x2a8 <shiftIn+0x20>
+ 2a4:	88 0f       	add	r24, r24
+ 2a6:	99 1f       	adc	r25, r25
+ 2a8:	0a 94       	dec	r0
+ 2aa:	e2 f7       	brpl	.-8      	; 0x2a4 <shiftIn+0x1c>
+ 2ac:	18 2b       	or	r17, r24
+		write(CLOCK, HIGH);
+ 2ae:	61 e0       	ldi	r22, 0x01	; 1
+ 2b0:	81 e0       	ldi	r24, 0x01	; 1
+ 2b2:	b9 df       	rcall	.-142    	; 0x226 <write>
+ 2b4:	21 96       	adiw	r28, 0x01	; 1
+	uint8_t value = 0;
+	uint8_t i;
+
+	DDRB &= ~(_BV(DATA)); // clear bit, direction = input
+	
+	for (i = 0; i < 8; ++i) {
+ 2b6:	c8 30       	cpi	r28, 0x08	; 8
+ 2b8:	d1 05       	cpc	r29, r1
+ 2ba:	69 f7       	brne	.-38     	; 0x296 <shiftIn+0xe>
+		write(CLOCK, LOW);   // bit valid on rising edge
+		value = value | (read(DATA) << i); // lsb first
+		write(CLOCK, HIGH);
+	}
+	
+	DDRB |= _BV(DATA); // set bit, direction = output
+ 2bc:	20 9a       	sbi	0x04, 0	; 4
+	
+	return value;
+}
+ 2be:	81 2f       	mov	r24, r17
+ 2c0:	df 91       	pop	r29
+ 2c2:	cf 91       	pop	r28
+ 2c4:	1f 91       	pop	r17
+ 2c6:	08 95       	ret
+
+000002c8 <readButtons>:
+
+uint8_t readButtons(void)
+{
+ 2c8:	1f 93       	push	r17
+ 2ca:	cf 93       	push	r28
+ 2cc:	df 93       	push	r29
+	uint8_t buttons = 0;
+
+	write(STROBE, LOW);
+ 2ce:	60 e0       	ldi	r22, 0x00	; 0
+ 2d0:	82 e0       	ldi	r24, 0x02	; 2
+ 2d2:	a9 df       	rcall	.-174    	; 0x226 <write>
+
+	shiftOut(0x42);       // Send command: read buttons
+ 2d4:	82 e4       	ldi	r24, 0x42	; 66
+ 2d6:	c4 df       	rcall	.-120    	; 0x260 <shiftOut>
+
+	DDRB &= ~(_BV(DATA)); // DATA pin = input
+ 2d8:	20 98       	cbi	0x04, 0	; 4
+ 2da:	c0 e0       	ldi	r28, 0x00	; 0
+	return value;
+}
+
+uint8_t readButtons(void)
+{
+	uint8_t buttons = 0;
+ 2dc:	d0 e0       	ldi	r29, 0x00	; 0
+
+	DDRB &= ~(_BV(DATA)); // DATA pin = input
+
+	// Read in 4 bytes containing button status
+	for (uint8_t i = 0; i < 4; i++) {
+		uint8_t v = shiftIn() << i;
+ 2de:	10 e0       	ldi	r17, 0x00	; 0
+ 2e0:	d3 df       	rcall	.-90     	; 0x288 <shiftIn>
+		buttons |= v;
+ 2e2:	90 e0       	ldi	r25, 0x00	; 0
+ 2e4:	0c 2e       	mov	r0, r28
+ 2e6:	02 c0       	rjmp	.+4      	; 0x2ec <readButtons+0x24>
+ 2e8:	88 0f       	add	r24, r24
+ 2ea:	99 1f       	adc	r25, r25
+ 2ec:	0a 94       	dec	r0
+ 2ee:	e2 f7       	brpl	.-8      	; 0x2e8 <readButtons+0x20>
+ 2f0:	18 2b       	or	r17, r24
+ 2f2:	21 96       	adiw	r28, 0x01	; 1
+	shiftOut(0x42);       // Send command: read buttons
+
+	DDRB &= ~(_BV(DATA)); // DATA pin = input
+
+	// Read in 4 bytes containing button status
+	for (uint8_t i = 0; i < 4; i++) {
+ 2f4:	c4 30       	cpi	r28, 0x04	; 4
+ 2f6:	d1 05       	cpc	r29, r1
+ 2f8:	99 f7       	brne	.-26     	; 0x2e0 <readButtons+0x18>
+		buttons |= v;
+	}
+
+	DDRB |= _BV(DATA);   // DATA pin = output
+
+	write(STROBE, HIGH);
+ 2fa:	20 9a       	sbi	0x04, 0	; 4
+ 2fc:	61 e0       	ldi	r22, 0x01	; 1
+ 2fe:	82 e0       	ldi	r24, 0x02	; 2
+ 300:	92 df       	rcall	.-220    	; 0x226 <write>
+
+	return buttons;
+}
+ 302:	81 2f       	mov	r24, r17
+ 304:	df 91       	pop	r29
+ 306:	cf 91       	pop	r28
+ 308:	1f 91       	pop	r17
+ 30a:	08 95       	ret
+
+0000030c <sendCommand>:
+
+// Send a command
+void sendCommand(uint8_t value)
+{
+ 30c:	cf 93       	push	r28
+ 30e:	c8 2f       	mov	r28, r24
+	write(STROBE, LOW);
+ 310:	60 e0       	ldi	r22, 0x00	; 0
+ 312:	82 e0       	ldi	r24, 0x02	; 2
+ 314:	88 df       	rcall	.-240    	; 0x226 <write>
+	shiftOut(value);
+ 316:	8c 2f       	mov	r24, r28
+ 318:	a3 df       	rcall	.-186    	; 0x260 <shiftOut>
+	write(STROBE, HIGH);
+ 31a:	61 e0       	ldi	r22, 0x01	; 1
+ 31c:	82 e0       	ldi	r24, 0x02	; 2
+ 31e:	83 df       	rcall	.-250    	; 0x226 <write>
+}
+ 320:	cf 91       	pop	r28
+ 322:	08 95       	ret
+
+00000324 <clearDisplay>:
+
+// Clear memory (LEDs and Display)
+void clearDisplay()
+{
+ 324:	cf 93       	push	r28
+	// Command: set auto increment mode
+	sendCommand(0x40);
+ 326:	80 e4       	ldi	r24, 0x40	; 64
+ 328:	f1 df       	rcall	.-30     	; 0x30c <sendCommand>
+	
+	// Command arguments
+	write(STROBE, LOW);
+ 32a:	60 e0       	ldi	r22, 0x00	; 0
+ 32c:	82 e0       	ldi	r24, 0x02	; 2
+ 32e:	7b df       	rcall	.-266    	; 0x226 <write>
+	
+	shiftOut(0xc0);                    // Starting at address 0
+ 330:	80 ec       	ldi	r24, 0xC0	; 192
+ 332:	96 df       	rcall	.-212    	; 0x260 <shiftOut>
+ 334:	c0 e1       	ldi	r28, 0x10	; 16
+	for(uint8_t i = 0; i < 16; i++) {
+		shiftOut(0x00);                // Clear register
+ 336:	80 e0       	ldi	r24, 0x00	; 0
+ 338:	93 df       	rcall	.-218    	; 0x260 <shiftOut>
+ 33a:	c1 50       	subi	r28, 0x01	; 1
+	
+	// Command arguments
+	write(STROBE, LOW);
+	
+	shiftOut(0xc0);                    // Starting at address 0
+	for(uint8_t i = 0; i < 16; i++) {
+ 33c:	e1 f7       	brne	.-8      	; 0x336 <clearDisplay+0x12>
+		shiftOut(0x00);                // Clear register
+	}
+	
+	write(STROBE, HIGH);
+ 33e:	61 e0       	ldi	r22, 0x01	; 1
+ 340:	82 e0       	ldi	r24, 0x02	; 2
+ 342:	71 df       	rcall	.-286    	; 0x226 <write>
+ 344:	cf 91       	pop	r28
+ 346:	08 95       	ret
+
+00000348 <updateDisplay>:
+ 348:	8f 92       	push	r8
+
+volatile unsigned char updateDisplayTaskId;
+
+// Display a digit
+void updateDisplay()
+{
+ 34a:	9f 92       	push	r9
+ 34c:	af 92       	push	r10
+ 34e:	bf 92       	push	r11
+ 350:	cf 92       	push	r12
+ 352:	df 92       	push	r13
+ 354:	ef 92       	push	r14
+ 356:	ff 92       	push	r15
+ 358:	0f 93       	push	r16
+ 35a:	1f 93       	push	r17
+ 35c:	cf 93       	push	r28
+ 35e:	df 93       	push	r29
+ 360:	cd b7       	in	r28, 0x3d	; 61
+ 362:	de b7       	in	r29, 0x3e	; 62
+ 364:	28 97       	sbiw	r28, 0x08	; 8
+ 366:	0f b6       	in	r0, 0x3f	; 63
+ 368:	f8 94       	cli
+ 36a:	de bf       	out	0x3e, r29	; 62
+ 36c:	0f be       	out	0x3f, r0	; 63
+ 36e:	cd bf       	out	0x3d, r28	; 61
+   uint32_t digit = currentDigit;
+ 370:	60 91 0a 01 	lds	r22, 0x010A	; 0x80010a <__data_end>
+ 374:	70 91 0b 01 	lds	r23, 0x010B	; 0x80010b <__data_end+0x1>
+ 378:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <__data_end+0x2>
+ 37c:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <__data_end+0x3>
+ 380:	9e 01       	movw	r18, r28
+ 382:	2f 5f       	subi	r18, 0xFF	; 255
+ 384:	3f 4f       	sbci	r19, 0xFF	; 255
+ 386:	79 01       	movw	r14, r18
+ 388:	8e 01       	movw	r16, r28
+ 38a:	07 5f       	subi	r16, 0xF7	; 247
+ 38c:	1f 4f       	sbci	r17, 0xFF	; 255
+ 38e:	69 01       	movw	r12, r18
+
+	// Split whole digit into single digits [0 to 9]
+	uint8_t digitArray[8];
+	for(uint8_t i = 0; i < 8; i++) {
+		digitArray[i] = digit % 10;    // Save current single digit
+ 390:	0f 2e       	mov	r0, r31
+ 392:	fa e0       	ldi	r31, 0x0A	; 10
+ 394:	8f 2e       	mov	r8, r31
+ 396:	91 2c       	mov	r9, r1
+ 398:	a1 2c       	mov	r10, r1
+ 39a:	b1 2c       	mov	r11, r1
+ 39c:	f0 2d       	mov	r31, r0
+ 39e:	a5 01       	movw	r20, r10
+ 3a0:	94 01       	movw	r18, r8
+ 3a2:	7c d0       	rcall	.+248    	; 0x49c <__udivmodsi4>
+ 3a4:	d6 01       	movw	r26, r12
+ 3a6:	6d 93       	st	X+, r22
+ 3a8:	6d 01       	movw	r12, r26
+		
+		digit /= 10;				       // Calculate next digit
+ 3aa:	62 2f       	mov	r22, r18
+ 3ac:	73 2f       	mov	r23, r19
+ 3ae:	84 2f       	mov	r24, r20
+ 3b0:	95 2f       	mov	r25, r21
+{
+   uint32_t digit = currentDigit;
+
+	// Split whole digit into single digits [0 to 9]
+	uint8_t digitArray[8];
+	for(uint8_t i = 0; i < 8; i++) {
+ 3b2:	a0 17       	cp	r26, r16
+ 3b4:	b1 07       	cpc	r27, r17
+ 3b6:	99 f7       	brne	.-26     	; 0x39e <updateDisplay+0x56>
+		
+		digit /= 10;				       // Calculate next digit
+	}
+	
+	// Command: set auto increment mode
+	sendCommand(0x40);
+ 3b8:	80 e4       	ldi	r24, 0x40	; 64
+ 3ba:	a8 df       	rcall	.-176    	; 0x30c <sendCommand>
+	
+	// Command arguments
+	write(STROBE, LOW);
+ 3bc:	60 e0       	ldi	r22, 0x00	; 0
+ 3be:	82 e0       	ldi	r24, 0x02	; 2
+	
+	// Starting at address 0
+	shiftOut(0xc0);
+ 3c0:	32 df       	rcall	.-412    	; 0x226 <write>
+ 3c2:	80 ec       	ldi	r24, 0xC0	; 192
+ 3c4:	4d df       	rcall	.-358    	; 0x260 <shiftOut>
+	
+   for(uint8_t i = 0; i < 8; i++) {
+		// Display digit 
+	   shiftOut(digits[digitArray[7-i]]);
+ 3c6:	d8 01       	movw	r26, r16
+ 3c8:	ee 91       	ld	r30, -X
+ 3ca:	8d 01       	movw	r16, r26
+ 3cc:	f0 e0       	ldi	r31, 0x00	; 0
+ 3ce:	e0 50       	subi	r30, 0x00	; 0
+ 3d0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3d2:	80 81       	ld	r24, Z
+		
+		// Set LED
+		shiftOut(0x00);
+ 3d4:	45 df       	rcall	.-374    	; 0x260 <shiftOut>
+ 3d6:	80 e0       	ldi	r24, 0x00	; 0
+	write(STROBE, LOW);
+	
+	// Starting at address 0
+	shiftOut(0xc0);
+	
+   for(uint8_t i = 0; i < 8; i++) {
+ 3d8:	43 df       	rcall	.-378    	; 0x260 <shiftOut>
+ 3da:	0e 15       	cp	r16, r14
+ 3dc:	1f 05       	cpc	r17, r15
+		
+		// Set LED
+		shiftOut(0x00);
+   }
+	
+	write(STROBE, HIGH);
+ 3de:	99 f7       	brne	.-26     	; 0x3c6 <updateDisplay+0x7e>
+ 3e0:	61 e0       	ldi	r22, 0x01	; 1
+ 3e2:	82 e0       	ldi	r24, 0x02	; 2
+ 3e4:	20 df       	rcall	.-448    	; 0x226 <write>
+
+   currentDigit++;
+ 3e6:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <__data_end>
+ 3ea:	90 91 0b 01 	lds	r25, 0x010B	; 0x80010b <__data_end+0x1>
+ 3ee:	a0 91 0c 01 	lds	r26, 0x010C	; 0x80010c <__data_end+0x2>
+ 3f2:	b0 91 0d 01 	lds	r27, 0x010D	; 0x80010d <__data_end+0x3>
+ 3f6:	01 96       	adiw	r24, 0x01	; 1
+ 3f8:	a1 1d       	adc	r26, r1
+ 3fa:	b1 1d       	adc	r27, r1
+ 3fc:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <__data_end>
+ 400:	90 93 0b 01 	sts	0x010B, r25	; 0x80010b <__data_end+0x1>
+ 404:	a0 93 0c 01 	sts	0x010C, r26	; 0x80010c <__data_end+0x2>
+ 408:	b0 93 0d 01 	sts	0x010D, r27	; 0x80010d <__data_end+0x3>
+}
+ 40c:	28 96       	adiw	r28, 0x08	; 8
+ 40e:	0f b6       	in	r0, 0x3f	; 63
+ 410:	f8 94       	cli
+ 412:	de bf       	out	0x3e, r29	; 62
+ 414:	0f be       	out	0x3f, r0	; 63
+ 416:	cd bf       	out	0x3d, r28	; 61
+ 418:	df 91       	pop	r29
+ 41a:	cf 91       	pop	r28
+ 41c:	1f 91       	pop	r17
+ 41e:	0f 91       	pop	r16
+ 420:	ff 90       	pop	r15
+ 422:	ef 90       	pop	r14
+ 424:	df 90       	pop	r13
+ 426:	cf 90       	pop	r12
+ 428:	bf 90       	pop	r11
+ 42a:	af 90       	pop	r10
+ 42c:	9f 90       	pop	r9
+ 42e:	8f 90       	pop	r8
+ 430:	08 95       	ret
+
+00000432 <checkButtons>:
+
+void checkButtons() 
+{
+ 432:	cf 93       	push	r28
+   uint8_t buttons = readButtons();
+ 434:	49 df       	rcall	.-366    	; 0x2c8 <readButtons>
+ 436:	c8 2f       	mov	r28, r24
+   uint8_t swB = 1;
+
+   uint8_t mskSwA = 1 << swA;
+   uint8_t mskSwB = 1 << swB;
+
+   if(buttons & mskSwA) {
+ 438:	80 ff       	sbrs	r24, 0
+ 43a:	11 c0       	rjmp	.+34     	; 0x45e <checkButtons+0x2c>
+      currentDigit = 0;
+ 43c:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <__data_end>
+ 440:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <__data_end+0x1>
+ 444:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <__data_end+0x2>
+ 448:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <__data_end+0x3>
+      updateDisplayTaskId = SCH_Add_Task(updateDisplay,0,1);
+ 44c:	41 e0       	ldi	r20, 0x01	; 1
+ 44e:	50 e0       	ldi	r21, 0x00	; 0
+ 450:	60 e0       	ldi	r22, 0x00	; 0
+ 452:	70 e0       	ldi	r23, 0x00	; 0
+ 454:	84 ea       	ldi	r24, 0xA4	; 164
+ 456:	91 e0       	ldi	r25, 0x01	; 1
+ 458:	23 de       	rcall	.-954    	; 0xa0 <SCH_Add_Task>
+ 45a:	80 93 31 01 	sts	0x0131, r24	; 0x800131 <updateDisplayTaskId>
+   }
+
+   if(buttons & mskSwB) {
+ 45e:	c1 ff       	sbrs	r28, 1
+ 460:	0b c0       	rjmp	.+22     	; 0x478 <checkButtons+0x46>
+      currentDigit = 0;
+ 462:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <__data_end>
+ 466:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <__data_end+0x1>
+ 46a:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <__data_end+0x2>
+ 46e:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <__data_end+0x3>
+      SCH_Delete_Task(updateDisplayTaskId);
+ 472:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <updateDisplayTaskId>
+ 476:	49 de       	rcall	.-878    	; 0x10a <SCH_Delete_Task>
+   }
+}
+ 478:	cf 91       	pop	r28
+ 47a:	08 95       	ret
+
+0000047c <main>:
+
+int main()
+{	
+	// Setup display
+
+   DDRB = 0xff;         // Set PORTB as output
+ 47c:	8f ef       	ldi	r24, 0xFF	; 255
+ 47e:	84 b9       	out	0x04, r24	; 4
+   sendCommand(0x89);   // Activate and set brightness to medium
+ 480:	89 e8       	ldi	r24, 0x89	; 137
+ 482:	44 df       	rcall	.-376    	; 0x30c <sendCommand>
+	clearDisplay();      // Clear memory (LEDs and Display)
+ 484:	4f df       	rcall	.-354    	; 0x324 <clearDisplay>
+
+   // Setup schedular
+   SCH_Init_T1();       // init de timer verwijder alle taken
+ 486:	74 de       	rcall	.-792    	; 0x170 <SCH_Init_T1>
+ 488:	41 e0       	ldi	r20, 0x01	; 1
+   
+   SCH_Add_Task(checkButtons,0,1);
+ 48a:	50 e0       	ldi	r21, 0x00	; 0
+ 48c:	60 e0       	ldi	r22, 0x00	; 0
+ 48e:	70 e0       	ldi	r23, 0x00	; 0
+ 490:	89 e1       	ldi	r24, 0x19	; 25
+ 492:	92 e0       	ldi	r25, 0x02	; 2
+   
+   SCH_Start();         // start de scheduler
+ 494:	05 de       	rcall	.-1014   	; 0xa0 <SCH_Add_Task>
+ 496:	81 de       	rcall	.-766    	; 0x19a <SCH_Start>
+
+   // Loop
+   while (1) {
+      SCH_Dispatch_Tasks();
+ 498:	48 de       	rcall	.-880    	; 0x12a <SCH_Dispatch_Tasks>
+ 49a:	fe cf       	rjmp	.-4      	; 0x498 <main+0x1c>
+
+0000049c <__udivmodsi4>:
+ 49c:	a1 e2       	ldi	r26, 0x21	; 33
+ 49e:	1a 2e       	mov	r1, r26
+ 4a0:	aa 1b       	sub	r26, r26
+ 4a2:	bb 1b       	sub	r27, r27
+ 4a4:	fd 01       	movw	r30, r26
+ 4a6:	0d c0       	rjmp	.+26     	; 0x4c2 <__udivmodsi4_ep>
+
+000004a8 <__udivmodsi4_loop>:
+ 4a8:	aa 1f       	adc	r26, r26
+ 4aa:	bb 1f       	adc	r27, r27
+ 4ac:	ee 1f       	adc	r30, r30
+ 4ae:	ff 1f       	adc	r31, r31
+ 4b0:	a2 17       	cp	r26, r18
+ 4b2:	b3 07       	cpc	r27, r19
+ 4b4:	e4 07       	cpc	r30, r20
+ 4b6:	f5 07       	cpc	r31, r21
+ 4b8:	20 f0       	brcs	.+8      	; 0x4c2 <__udivmodsi4_ep>
+ 4ba:	a2 1b       	sub	r26, r18
+ 4bc:	b3 0b       	sbc	r27, r19
+ 4be:	e4 0b       	sbc	r30, r20
+ 4c0:	f5 0b       	sbc	r31, r21
+
+000004c2 <__udivmodsi4_ep>:
+ 4c2:	66 1f       	adc	r22, r22
+ 4c4:	77 1f       	adc	r23, r23
+ 4c6:	88 1f       	adc	r24, r24
+ 4c8:	99 1f       	adc	r25, r25
+ 4ca:	1a 94       	dec	r1
+ 4cc:	69 f7       	brne	.-38     	; 0x4a8 <__udivmodsi4_loop>
+ 4ce:	60 95       	com	r22
+ 4d0:	70 95       	com	r23
+ 4d2:	80 95       	com	r24
+ 4d4:	90 95       	com	r25
+ 4d6:	9b 01       	movw	r18, r22
+ 4d8:	ac 01       	movw	r20, r24
+ 4da:	bd 01       	movw	r22, r26
+ 4dc:	cf 01       	movw	r24, r30
+ 4de:	08 95       	ret
+
+000004e0 <_exit>:
+ 4e0:	f8 94       	cli
+
+000004e2 <__stop_program>:
+ 4e2:	ff cf       	rjmp	.-2      	; 0x4e2 <__stop_program>
