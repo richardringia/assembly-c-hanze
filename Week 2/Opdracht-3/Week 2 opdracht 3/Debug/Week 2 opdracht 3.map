@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\robbi\Desktop\Week 2 opdracht 3\Week 2 opdracht 3\main.asm Wed Oct 21 15:00:30 2020
+AVRASM ver. 2.2.7  C:\Users\robbi\Documents\school\assembly-c-hanze\Week 2\Opdracht-3\Week 2 opdracht 3\main.asm Fri Oct 30 11:37:51 2020
 
 
 EQU  SIGNATURE_000 0000001e
@@ -695,12 +695,6 @@ EQU  ACIaddr      0000002e
 EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
-DEF  ANSL         r0
-DEF  ANSH         r1
-DEF  x_reg        r16
-DEF  y_reg        r17
-DEF  z_reg        r18
-DEF  temp         r19
-CSEG main         00000000
-CSEG loop         00000003
+DSEG dest         00000100
+CSEG loop         00000004
 CSEG end          0000000d

@@ -6,26 +6,24 @@
 ;
 
 .include "m328Pdef.inc"
-.def ANSL = r0
-.def ANSH = r1
-.def x_reg = r16
-.def y_reg = r17
-.def z_reg = r18
-.def temp = r19
-
-main:
-	ldi x_reg, 3
-	ldi y_reg, 1
-	ldi z_reg, 1
+.dseg
+.org 0x100
+dest: .byte 20
+.cseg
+ldi r16, 1
+ldi r17, 3
+ldi xh, high(dest)
+ldi xl, low(dest)
 
 loop:
-	cpi z_reg, 255
-	brsh end
-	mul z_reg, x_reg
-	mov z_reg, ANSL
-	mov temp, z_reg
-	sub temp, y_reg
-	mov z_reg, temp
+	st x+, r16
+	mul r16, r17
+	mov r16, r0
+	st x+, r16
+	dec r16
+	mov r18, r1
+	cpi r18, 1
+	brge end
 	rjmp loop
 
 
