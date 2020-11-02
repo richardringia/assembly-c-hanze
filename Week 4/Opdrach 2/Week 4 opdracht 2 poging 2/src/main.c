@@ -62,7 +62,7 @@ void checkButtons()
    uint8_t buttons = readButtons();
 
    uint8_t swA = 0;
-   uint8_t swB = 7;
+   uint8_t swB = 1;
 
    uint8_t mskSwA = 1 << swA;
    uint8_t mskSwB = 1 << swB;

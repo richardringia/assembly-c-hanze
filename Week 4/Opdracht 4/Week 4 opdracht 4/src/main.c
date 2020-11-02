@@ -1,4 +1,4 @@
-// B) 1 / 19200 * 8 = 0,0004 sec
+// B) 1 / 19200 * 10 = 0,0005 sec
 #include <avr/io.h>
 #include <stdlib.h>
 #include <avr/sfr_defs.h>
@@ -51,11 +51,11 @@ int main(void) {
 		uint8_t temp = usart_read();
 		usart_trasmit(temp);
 
-		if(temp == 0x31) {
-			PORTB = 0xff;
+		if(temp == 0x31) { // Kijkt of de waarde van temp gelijk staat aan de waarde "1" (Ascii waarde)
+			PORTB = 0xff; // Als dat zo is dan wordt de waarde van PortB gezet op 1 (dus aan)
 		}
-		else {
-			PORTB = 0x00;
+		else { // Als dat niet zo is (dus een andere waarde), dan zet ui de waarde van PortB op 0 (dus uit)
+			PORTB = 0x00; 
 		}
 	}
 }
